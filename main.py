@@ -10,6 +10,7 @@
 import cv2
 import numpy as np
 import dlib
+from sys import argv
 
 # Load the detector
 detector = dlib.get_frontal_face_detector()
