@@ -17,8 +17,12 @@ detector = dlib.get_frontal_face_detector()
 # Load the predictor
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
-# read the image
-img = cv2.imread("face.jpg")
+# Get image
+if argv[1] == 'cam':
+    src = VideoCapture(0)
+    _, img = src.read()
+else: 
+    img = imread(argv[1])
 
 # Convert image into grayscale
 gray = cv2.cvtColor(src=img, code=cv2.COLOR_BGR2GRAY)
